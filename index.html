@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<title>first</title>
+
+<div class="row">
+    <div class="column">
+        <h1>Input</h1>
+        <form>
+            <textarea id="input" name="input" rows="4" cols="50">Lines go here</textarea>
+            <br>
+        <button type="button" id="myBtn">Process</button>
+        </form>
+    </div>
+    <div class="column">
+        <h1>Output</h1>
+        <textarea id="output" name="output" rows="4" cols="50">output</textarea>
+    </div>
+</div> 
+
+<script>
+    var input  = document.getElementById("input");
+    var output = document.getElementById("output");
+    var myBtn  = document.getElementById("myBtn");
+
+myBtn.addEventListener("click", function(){
+    output.value = input.value.split("").reverse().join("");
+    textarea.focus(); // This is optional, if you want the user to go back into the textarea. This will be good then :)
+
+}, false);
+</script>
+
+</body>
+
+</html>
